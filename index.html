@@ -98,6 +98,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .fam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.4rem}
 .fam{background:var(--steel-3);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
 .fam:hover{transform:translateY(-4px);border-color:#4a505b}
+.fam-img{height:200px;background:radial-gradient(420px 200px at 50% 110%,rgba(230,0,18,.18),transparent 70%),linear-gradient(160deg,#2b2f37,#1a1d22);display:flex;align-items:center;justify-content:center;padding:1rem;position:relative;overflow:hidden}
+.fam-img img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5));transition:transform .3s}
+.fam:hover .fam-img img{transform:scale(1.05)}
+.fam-img .glyph-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:900;font-size:3.4rem;color:rgba(255,255,255,.07);text-transform:uppercase}
 .fam-head{background:var(--ink);padding:1.2rem 1.4rem .9rem;border-bottom:3px solid var(--isuzu-red)}
 .fam-head .fcat{font-family:var(--font-m);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
 .fam-head .fname{font-family:var(--font-d);font-weight:900;font-size:2rem;text-transform:uppercase;line-height:1;color:#fff}
@@ -132,6 +136,8 @@ table.pl thead th{font-family:var(--font-m);font-size:.62rem;letter-spacing:.16e
 table.pl tbody td{padding:.8rem 1rem;border-top:1px solid rgba(255,255,255,.06);font-size:.9rem;vertical-align:middle}
 table.pl tbody tr:hover{background:rgba(230,0,18,.06)}
 table.pl .tname{font-family:var(--font-d);font-weight:700;font-size:1.08rem;text-transform:uppercase;color:#fff}
+table.pl .tcell{display:flex;align-items:center;gap:.8rem}
+table.pl .timg{width:76px;height:56px;object-fit:contain;background:#fff;border:1px solid #9b9ea6;padding:3px;flex-shrink:0}
 table.pl .tspec{font-family:var(--font-m);font-size:.68rem;color:#8a909b}
 table.pl .tprice{font-family:var(--font-d);font-weight:800;font-size:1.15rem;color:var(--isuzu-red);white-space:nowrap}
 table.pl .tnote{font-family:var(--font-m);font-size:.6rem;color:#6a707b;display:block}
@@ -146,6 +152,7 @@ tr.group-row td small{font-family:var(--font-m);font-weight:400;font-size:.62rem
 .plc-group{font-family:var(--font-d);font-weight:800;text-transform:uppercase;font-size:1.1rem;color:#fff;background:var(--steel-3);border-left:3px solid var(--isuzu-red);padding:.7rem 1rem;margin:1.2rem 0 .7rem}
 .plc-group small{display:block;font-family:var(--font-m);font-weight:400;font-size:.6rem;letter-spacing:.08em;color:var(--amber);text-transform:none}
 .plc{background:var(--steel);border:1px solid var(--line);padding:1rem 1.1rem;margin-bottom:.7rem}
+.plc .plc-img{width:100%;height:140px;object-fit:contain;background:linear-gradient(160deg,#2b2f37,#1a1d22);padding:.6rem;margin-bottom:.7rem;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
 .plc .plc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
 .plc .plc-name{font-family:var(--font-d);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:#fff;line-height:1.1}
 .plc .plc-price{font-family:var(--font-d);font-weight:800;font-size:1.2rem;color:var(--isuzu-red);white-space:nowrap;text-align:right}
@@ -361,6 +368,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
       <article class="fam rv">
         <div class="fghost">TRAGA</div>
+        <div class="fam-img"><span class="glyph-fb">TRAGA</span><img src="https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Traga.png" alt="Isuzu Traga Pick Up" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="fam-head">
           <div class="fcat">Medium Pick Up · 6 Varian</div>
           <div class="fname">Traga</div>
@@ -385,6 +393,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
       <article class="fam rv">
         <div class="fghost">ELF</div>
+        <div class="fam-img"><span class="glyph-fb">ELF</span><img src="https://isuzu-astra.com/wp-content/uploads/2022/05/NMR_380x480px.jpg" alt="Isuzu Elf NMR" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="fam-head">
           <div class="fcat">Light Truck &amp; Bus · 11 Varian</div>
           <div class="fname">Elf N-Series</div>
@@ -409,6 +418,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
       <article class="fam rv">
         <div class="fghost">GIGA</div>
+        <div class="fam-img"><span class="glyph-fb">GIGA</span><img src="https://isuzu-astra.com/wp-content/uploads/2022/05/FVZ_380x480px.jpg" alt="Isuzu Giga FVZ" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="fam-head">
           <div class="fcat">Medium–Heavy Truck · 20 Varian</div>
           <div class="fname">Giga F-Series</div>
@@ -433,6 +443,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
       <article class="fam rv">
         <div class="fghost">D-MAX</div>
+        <div class="fam-img"><span class="glyph-fb">D-MAX</span><img src="https://isuzu-astra.com/wp-content/uploads/2022/05/D-MAX-baru_380x480px.jpg" alt="Isuzu D-Max" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="fam-head">
           <div class="fcat">Double Cabin 4x4 · 3 Varian</div>
           <div class="fname">D-Max</div>
@@ -457,6 +468,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
       <article class="fam rv">
         <div class="fghost">MU-X</div>
+        <div class="fam-img"><span class="glyph-fb">MU-X</span><img src="https://isuzu-astra.com/wp-content/uploads/2022/05/MU-X-baru_380x480px.jpg" alt="Isuzu MU-X" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="fam-head">
           <div class="fcat">SUV 7-Seater · 4x4</div>
           <div class="fname">MU-X</div>
@@ -709,79 +721,102 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </a>
 
 <script>
+/* ============ GAMBAR RESMI (terverifikasi dari isuzu-astra.com) ============ */
+const IMG = {
+  traga:    "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Traga.png",
+  tragabox: "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Traga-Box.png",
+  nlr:      "https://isuzu-astra.com/wp-content/uploads/2021/09/ISUZU-NLR-55TLX.png",
+  nlrcard:  "https://isuzu-astra.com/wp-content/uploads/2022/05/NLR_380x480px.jpg",
+  nmr:      "https://isuzu-astra.com/wp-content/uploads/2022/05/NMR_380x480px.jpg",
+  nmrhd:    "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-ELF-NMR-71-HD-58.png",
+  nps:      "https://isuzu-astra.com/wp-content/uploads/2022/05/NPS_380x480px.jpg",
+  nlrb:     "https://isuzu-astra.com/wp-content/uploads/2022/05/NLR-B_380x480px.jpg",
+  nqrb:     "https://isuzu-astra.com/wp-content/uploads/2022/05/NQR-B_380x480px.jpg",
+  frr:      "https://isuzu-astra.com/wp-content/uploads/2022/05/FRR_380x480px.jpg",
+  ftr:      "https://isuzu-astra.com/wp-content/uploads/2022/05/FTR_380x480px.jpg",
+  fvr:      "https://isuzu-astra.com/wp-content/uploads/2022/05/FVR_380x480px.jpg",
+  fvm:      "https://isuzu-astra.com/wp-content/uploads/2022/05/FVM_380x480px.jpg",
+  fvz:      "https://isuzu-astra.com/wp-content/uploads/2022/05/FVZ_380x480px.jpg",
+  gvr:      "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Giga-GVR.png",
+  gvz:      "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Giga-GVZ.png",
+  gxz:      "https://isuzu-astra.com/wp-content/uploads/2021/09/Isuzu-Giga-GXZ.png",
+  dmax:     "https://isuzu-astra.com/wp-content/uploads/2022/05/D-MAX-baru_380x480px.jpg",
+  mux:      "https://isuzu-astra.com/wp-content/uploads/2022/05/MU-X-baru_380x480px.jpg",
+};
+
 /* ============ DATA PRODUK LENGKAP ============ */
 const PRODUK = [
   // TRAGA — OTR
   {g:"ISUZU TRAGA — Medium Pick Up", note:"4JA1 Common Rail · 80 PS · 2.500 cc · Harga OTR", fam:"traga", items:[
-    {n:"Traga Chassis", s:"Sasis kosong · siap karoseri custom", p:294000000, otr:true},
-    {n:"Traga Pick Up (FD)", s:"Flat Deck · bak terluas di kelasnya", p:295000000, otr:true},
-    {n:"Traga Pick Up (FD) Black Premium", s:"Flat Deck · trim hitam premium", p:297000000, otr:true},
-    {n:"Traga Chassis Bus", s:"Sasis bus · elf-killer angkutan", p:299000000, otr:true},
-    {n:"Traga Box Semi Aluminium", s:"Box semi-alm terpasang · siap kerja", p:337000000, otr:true},
-    {n:"Traga Bus", s:"Bus body terpasang", p:504000000, otr:true},
+    {n:"Traga Chassis", s:"Sasis kosong · siap karoseri custom", p:294000000, otr:true, img:IMG.traga},
+    {n:"Traga Pick Up (FD)", s:"Flat Deck · bak terluas di kelasnya", p:295000000, otr:true, img:IMG.traga},
+    {n:"Traga Pick Up (FD) Black Premium", s:"Flat Deck · trim hitam premium", p:297000000, otr:true, img:IMG.traga},
+    {n:"Traga Chassis Bus", s:"Sasis bus · elf-killer angkutan", p:299000000, otr:true, img:IMG.traga},
+    {n:"Traga Box Semi Aluminium", s:"Box semi-alm terpasang · siap kerja", p:337000000, otr:true, img:IMG.tragabox},
+    {n:"Traga Bus", s:"Bus body terpasang", p:504000000, otr:true, img:IMG.traga},
   ]},
   // ELF NLR
   {g:"ISUZU ELF NLR — 4 Ban", note:"4JJ1-TCC · 120 PS · 2.999 cc · GVW 5.100 kg · OTR", fam:"elf", items:[
-    {n:"Elf NLR Short", s:"WB 2.490 mm · distribusi kota", p:428000000, otr:true},
-    {n:"Elf NLR Long", s:"WB 3.360 mm · kargo lebih panjang", p:445000000, otr:true},
+    {n:"Elf NLR Short", s:"WB 2.490 mm · distribusi kota", p:428000000, otr:true, img:IMG.nlr},
+    {n:"Elf NLR Long", s:"WB 3.360 mm · kargo lebih panjang", p:445000000, otr:true, img:IMG.nlr},
   ]},
   // ELF NMR
   {g:"ISUZU ELF NMR — 6 Ban", note:"4HL1-TCS · 150 PS · 4.778 cc · OTR", fam:"elf", items:[
-    {n:"Elf NMR Std", s:"CDD standar · serba bisa", p:506000000, otr:true},
-    {n:"Elf NMR Long", s:"Sasis panjang · volume besar", p:517000000, otr:true},
-    {n:"Elf NMR HD 5.8", s:"Heavy duty · sasis diperkuat", p:517000000, otr:true},
-    {n:"Elf NMR HD 6.5", s:"Heavy duty terpanjang", p:528000000, otr:true},
-    {n:"Elf NPS 4x4", s:"Off-road · tambang & perkebunan", p:905000000, otr:false},
+    {n:"Elf NMR Std", s:"CDD standar · serba bisa", p:506000000, otr:true, img:IMG.nmr},
+    {n:"Elf NMR Long", s:"Sasis panjang · volume besar", p:517000000, otr:true, img:IMG.nmr},
+    {n:"Elf NMR HD 5.8", s:"Heavy duty · sasis diperkuat", p:517000000, otr:true, img:IMG.nmrhd},
+    {n:"Elf NMR HD 6.5", s:"Heavy duty terpanjang", p:528000000, otr:true, img:IMG.nmrhd},
+    {n:"Elf NPS 4x4", s:"Off-road · tambang & perkebunan", p:905000000, otr:false, img:IMG.nps},
   ]},
   // MICROBUS & BUS
   {g:"ISUZU ELF MICROBUS & BUS CHASSIS", note:"RTU siap jalan ber-AC / sasis bus · OTR", fam:"elf", items:[
-    {n:"Elf NLR B Short (Bus Chassis)", s:"Sasis bus pendek", p:432000000, otr:true},
-    {n:"Elf NLR B Long (Bus Chassis)", s:"Sasis bus panjang", p:445000000, otr:true},
-    {n:"NQR B Medium Bus (Chassis)", s:"Medium bus ±30 seat", p:522000000, otr:true},
-    {n:"Elf NLR B Microbus AC", s:"RTU siap jalan · travel & shuttle", p:602000000, otr:true},
-    {n:"Elf NLR B L Microbus AC", s:"RTU long · kapasitas maksimal", p:649000000, otr:true},
+    {n:"Elf NLR B Short (Bus Chassis)", s:"Sasis bus pendek", p:432000000, otr:true, img:IMG.nlrb},
+    {n:"Elf NLR B Long (Bus Chassis)", s:"Sasis bus panjang", p:445000000, otr:true, img:IMG.nlrb},
+    {n:"NQR B Medium Bus (Chassis)", s:"Medium bus ±30 seat", p:522000000, otr:true, img:IMG.nqrb},
+    {n:"Elf NLR B Microbus AC", s:"RTU siap jalan · travel & shuttle", p:602000000, otr:true, img:IMG.nlrb},
+    {n:"Elf NLR B L Microbus AC", s:"RTU long · kapasitas maksimal", p:649000000, otr:true, img:IMG.nlrb},
   ]},
   // GIGA 4x2 4cyl
   {g:"ISUZU GIGA 4x2 — 4 Silinder", note:"GVW 14.000 kg · Harga OFF THE ROAD", fam:"giga", items:[
-    {n:"Giga FRR Q", s:"4HK1-TCC · 190 PS · WB 5.320", p:633000000, otr:false},
-    {n:"Giga FTR P", s:"4HK1-TCS · 210 PS · WB 5.050", p:705000000, otr:false},
-    {n:"Giga FTR S", s:"4HK1-TCS · 210 PS · WB 6.050", p:709000000, otr:false},
-    {n:"Giga FTR T", s:"4HK1-TCS · 210 PS · WB 6.500", p:717000000, otr:false},
+    {n:"Giga FRR Q", s:"4HK1-TCC · 190 PS · WB 5.320", p:633000000, otr:false, img:IMG.frr},
+    {n:"Giga FTR P", s:"4HK1-TCS · 210 PS · WB 5.050", p:705000000, otr:false, img:IMG.ftr},
+    {n:"Giga FTR S", s:"4HK1-TCS · 210 PS · WB 6.050", p:709000000, otr:false, img:IMG.ftr},
+    {n:"Giga FTR T", s:"4HK1-TCS · 210 PS · WB 6.500", p:717000000, otr:false, img:IMG.ftr},
   ]},
   // GIGA 4x2 6cyl
   {g:"ISUZU GIGA 4x2 — 6 Silinder", note:"6HK1-TCN · 245 PS · GVW 16.000 kg · OFF THE ROAD", fam:"giga", items:[
-    {n:"Giga FVR L D", s:"WB 4.300 · dump & mixer", p:786000000, otr:false},
-    {n:"Giga FVR P", s:"WB 5.060", p:792000000, otr:false},
-    {n:"Giga FVR Q", s:"WB 5.560", p:797000000, otr:false},
-    {n:"Giga FVR S", s:"WB 6.160", p:802000000, otr:false},
-    {n:"Giga FVR U", s:"WB 6.600 · kargo terpanjang", p:811000000, otr:false},
+    {n:"Giga FVR L D", s:"WB 4.300 · dump & mixer", p:786000000, otr:false, img:IMG.fvr},
+    {n:"Giga FVR P", s:"WB 5.060", p:792000000, otr:false, img:IMG.fvr},
+    {n:"Giga FVR Q", s:"WB 5.560", p:797000000, otr:false, img:IMG.fvr},
+    {n:"Giga FVR S", s:"WB 6.160", p:802000000, otr:false, img:IMG.fvr},
+    {n:"Giga FVR U", s:"WB 6.600 · kargo terpanjang", p:811000000, otr:false, img:IMG.fvr},
   ]},
   // GIGA 6x2
   {g:"ISUZU GIGA 6x2 — Tronton 10 Ban", note:"6HK1-TCN S · GVW 26.000 kg · OFF THE ROAD", fam:"giga", items:[
-    {n:"Giga FVM N", s:"245 PS · WB 4.115+1.370", p:928000000, otr:false},
-    {n:"Giga FVM U", s:"245 PS · WB 5.825+1.370 · wingbox", p:940000000, otr:false},
-    {n:"Giga FVM U HP", s:"285 PS · long wingbox antar pulau", p:993000000, otr:false},
-    {n:"Giga FVM N HP ABS", s:"285 PS · ABS", p:1009000000, otr:false},
+    {n:"Giga FVM N", s:"245 PS · WB 4.115+1.370", p:928000000, otr:false, img:IMG.fvm},
+    {n:"Giga FVM U", s:"245 PS · WB 5.825+1.370 · wingbox", p:940000000, otr:false, img:IMG.fvm},
+    {n:"Giga FVM U HP", s:"285 PS · long wingbox antar pulau", p:993000000, otr:false, img:IMG.fvm},
+    {n:"Giga FVM N HP ABS", s:"285 PS · ABS", p:1009000000, otr:false, img:IMG.fvm},
   ]},
   // GIGA 6x4
   {g:"ISUZU GIGA 6x4 — Rigid", note:"6HK1-TCS · 285 PS · GVW 26.000 kg · OFF THE ROAD", fam:"giga", items:[
-    {n:"Giga FVZ L HP MX", s:"WB 3.565+1.370 · dump tambang", p:1158000000, otr:false},
-    {n:"Giga FVZ N HP", s:"WB 4.115+1.370", p:1163000000, otr:false},
-    {n:"Giga FVZ U HP", s:"WB 5.825+1.370", p:1184000000, otr:false},
+    {n:"Giga FVZ L HP MX", s:"WB 3.565+1.370 · dump tambang", p:1158000000, otr:false, img:IMG.fvz},
+    {n:"Giga FVZ N HP", s:"WB 4.115+1.370", p:1163000000, otr:false, img:IMG.fvz},
+    {n:"Giga FVZ U HP", s:"WB 5.825+1.370", p:1184000000, otr:false, img:IMG.fvz},
   ]},
   // TRACTOR HEAD
   {g:"ISUZU GIGA TRACTOR HEAD", note:"Penarik trailer · GCW s.d. 46 ton · OFF THE ROAD", fam:"giga", items:[
-    {n:"Giga GVR J (4x2)", s:"245 PS · trailer ringan", p:826000000, otr:false},
-    {n:"Giga GVR J HP ABS (4x2)", s:"285 PS · ABS", p:899000000, otr:false},
-    {n:"Giga GVZ K HP ABS (6x4)", s:"285 PS · kontainer", p:1188000000, otr:false},
-    {n:"Giga GXZ K ABS (6x4)", s:"350 PS · flagship heavy haul", p:1345000000, otr:false},
+    {n:"Giga GVR J (4x2)", s:"245 PS · trailer ringan", p:826000000, otr:false, img:IMG.gvr},
+    {n:"Giga GVR J HP ABS (4x2)", s:"285 PS · ABS", p:899000000, otr:false, img:IMG.gvr},
+    {n:"Giga GVZ K HP ABS (6x4)", s:"285 PS · kontainer", p:1188000000, otr:false, img:IMG.gvz},
+    {n:"Giga GXZ K ABS (6x4)", s:"350 PS · flagship heavy haul", p:1345000000, otr:false, img:IMG.gxz},
   ]},
   // LCV
   {g:"ISUZU D-MAX & MU-X — LCV / SUV", note:"RZ4E 1.9L VGS Turbo Diesel · Euro 4 · CBU · OTR", fam:"lcv", items:[
-    {n:"D-Max SC 1.9 M/T", s:"Single Cabin · manual", p:413950000, otr:true},
-    {n:"D-Max DC 1.9 M/T", s:"Double Cabin · manual", p:469600000, otr:true},
-    {n:"D-Max Rodeo 1.9 M/T", s:"Double Cabin · trim tertinggi", p:524100000, otr:true},
-    {n:"All New MU-X 4x4 1.9 A/T", s:"SUV 7-seater · automatic · 4WD", p:628900000, otr:true},
+    {n:"D-Max SC 1.9 M/T", s:"Single Cabin · manual", p:413950000, otr:true, img:IMG.dmax},
+    {n:"D-Max DC 1.9 M/T", s:"Double Cabin · manual", p:469600000, otr:true, img:IMG.dmax},
+    {n:"D-Max Rodeo 1.9 M/T", s:"Double Cabin · trim tertinggi", p:524100000, otr:true, img:IMG.dmax},
+    {n:"All New MU-X 4x4 1.9 A/T", s:"SUV 7-seater · automatic · 4WD", p:628900000, otr:true, img:IMG.mux},
   ]},
 ];
 
@@ -808,13 +843,16 @@ function renderPL(){
     items.forEach(it => {
       count++;
       const noteTxt = it.otr ? 'OTR referensi*' : 'Off The Road*';
+      const imgTag = it.img ? `<img class="timg" src="${it.img}" alt="${it.n}" loading="lazy" onerror="this.style.display='none'">` : '';
       html += `<tr>
-        <td><div class="tname">${it.n}</div></td>
+        <td><div class="tcell">${imgTag}<div class="tname">${it.n}</div></div></td>
         <td><span class="tspec">${it.s}</span></td>
         <td><span class="tprice">${fmtShort(it.p)}</span><span class="tnote">${noteTxt}</span></td>
         <td style="text-align:right"><a class="twa" href="${waLink(it.n)}" target="_blank" rel="noopener">WA →</a></td>
       </tr>`;
+      const cImg = it.img ? `<img class="plc-img" src="${it.img}" alt="${it.n}" loading="lazy" onerror="this.style.display='none'">` : '';
       cardHtml += `<div class="plc">
+        ${cImg}
         <div class="plc-top">
           <div class="plc-name">${it.n}</div>
           <div><div class="plc-price">${fmtShort(it.p)}</div><span class="plc-note">${noteTxt}</span></div>
