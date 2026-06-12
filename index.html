@@ -21,7 +21,8 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-b);background:var(--steel);color:#e8e9eb;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-b);background:var(--steel);color:#e8e9eb;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{max-width:100%}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--isuzu-red);color:#fff}
@@ -51,7 +52,16 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks a{color:#c8ccd3;transition:color .2s}.navlinks a:hover{color:#fff}
 .nav-cta{font-family:var(--font-d);font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--isuzu-red);color:#fff;padding:.55rem 1.1rem;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
 .nav-cta:hover{background:var(--red-deep)}
-@media(max-width:980px){.navlinks{display:none}}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;font-size:1.4rem;padding:.35rem .7rem;cursor:pointer}
+.mobile-menu{display:none;background:var(--ink);border-bottom:2px solid var(--isuzu-red)}
+.mobile-menu a{display:block;padding:1rem 4%;font-family:var(--font-d);font-weight:700;text-transform:uppercase;font-size:1.1rem;letter-spacing:.05em;color:#e8e9eb;border-top:1px solid rgba(255,255,255,.07)}
+.mobile-menu a:active{background:var(--isuzu-red)}
+.mobile-menu.open{display:block}
+@media(max-width:980px){
+  .navlinks{display:none}
+  .burger{display:block}
+  nav .nav-cta{display:none}
+}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;padding:88px 0 60px;background:radial-gradient(1100px 480px at 80% -10%,rgba(230,0,18,.16),transparent 60%),var(--steel)}
@@ -131,6 +141,46 @@ table.pl .twa:hover{background:var(--red-deep)}
 tr.group-row td{background:var(--steel-3);font-family:var(--font-d);font-weight:800;text-transform:uppercase;font-size:1.05rem;letter-spacing:.06em;color:#fff;border-top:2px solid var(--isuzu-red);padding:.7rem 1rem}
 tr.group-row td small{font-family:var(--font-m);font-weight:400;font-size:.62rem;letter-spacing:.1em;color:var(--amber);text-transform:none;margin-left:.8rem}
 .pl-note{font-family:var(--font-m);font-size:.66rem;color:#6a707b;margin-top:1.2rem;line-height:1.7}
+/* ---- PRICELIST VERSI HP: kartu susun ---- */
+.pl-cards{display:none}
+.plc-group{font-family:var(--font-d);font-weight:800;text-transform:uppercase;font-size:1.1rem;color:#fff;background:var(--steel-3);border-left:3px solid var(--isuzu-red);padding:.7rem 1rem;margin:1.2rem 0 .7rem}
+.plc-group small{display:block;font-family:var(--font-m);font-weight:400;font-size:.6rem;letter-spacing:.08em;color:var(--amber);text-transform:none}
+.plc{background:var(--steel);border:1px solid var(--line);padding:1rem 1.1rem;margin-bottom:.7rem}
+.plc .plc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
+.plc .plc-name{font-family:var(--font-d);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:#fff;line-height:1.1}
+.plc .plc-price{font-family:var(--font-d);font-weight:800;font-size:1.2rem;color:var(--isuzu-red);white-space:nowrap;text-align:right}
+.plc .plc-note{display:block;font-family:var(--font-m);font-size:.56rem;color:#6a707b;text-align:right}
+.plc .plc-spec{font-family:var(--font-m);font-size:.68rem;color:#8a909b;margin:.4rem 0 .8rem}
+.plc .plc-wa{display:block;text-align:center;font-family:var(--font-d);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;background:var(--isuzu-red);color:#fff;padding:.6rem}
+.plc .plc-wa:active{background:var(--red-deep)}
+
+/* ====== MOBILE GLOBAL ====== */
+@media(max-width:720px){
+  section{padding:54px 0}
+  .topbar .wrap span:first-child{display:none}
+  .topbar .wrap{justify-content:center}
+  .hero{padding:44px 0 36px}
+  .hero p.lede{font-size:.96rem}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  .hstat .n{font-size:1.6rem}
+  .fam-grid{grid-template-columns:1fr}
+  .pl-table-wrap{display:none}   /* sembunyikan tabel di HP */
+  .pl-cards{display:block}        /* tampilkan kartu di HP */
+  .pl-tools{flex-direction:column;align-items:stretch}
+  .pl-tools .fbtn{width:100%;text-align:center}
+  .guide-grid,.why-grid,.testi-grid{grid-template-columns:1fr}
+  .karo-grid{grid-template-columns:1fr 1fr}
+  .sim-box{padding:1.3rem}
+  .sim-out .val{font-size:1.8rem}
+  .bigcta .btn{width:90%;justify-content:center}
+  h2.sec-title br{display:none}
+  .hero h1 br{display:inline}
+}
+@media(max-width:380px){
+  .karo-grid{grid-template-columns:1fr}
+  .hp-num{font-size:1.7rem}
+}
 
 /* PANDUAN */
 .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;margin-top:2.3rem}
@@ -249,6 +299,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <a href="#faq">FAQ</a>
     </div>
     <a class="nav-cta" href="https://wa.me/628122229090?text=Halo%20Pak%20Rachmat%2C%20saya%20mau%20minta%20pricelist%20Isuzu%20Bandung%20terbaru" target="_blank" rel="noopener">Minta Pricelist</a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#lineup">Lineup</a>
+    <a href="#pricelist">Pricelist Lengkap</a>
+    <a href="#panduan">Panduan Memilih</a>
+    <a href="#kredit">Simulasi Kredit</a>
+    <a href="#karoseri">Karoseri</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://wa.me/628122229090?text=Halo%20Pak%20Rachmat%2C%20saya%20mau%20minta%20pricelist%20Isuzu%20Bandung%20terbaru" target="_blank" rel="noopener" style="background:var(--isuzu-red);color:#fff">💬 Minta Pricelist via WA</a>
   </div>
 </nav>
 
@@ -445,6 +505,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <tbody id="plBody"></tbody>
       </table>
     </div>
+    <div class="pl-cards" id="plCards"></div>
     <p class="pl-note">* Harga referensi OTR Bodetabek per Jan 2026 (Traga, Elf, D-Max, MU-X) — sudah termasuk pajak &amp; STNK wilayah referensi. Harga Giga adalah <b>Off The Road</b>: belum termasuk PKB, BBN, dan karoseri. Harga NPS 4x4 juga Off The Road. Harga OTR Bandung/Jawa Barat berbeda mengikuti BBNKB &amp; PKB Jabar — hubungi kami untuk angka final. Harga dapat berubah sewaktu-waktu mengikuti kebijakan ATPM.</p>
   </div>
 </section>
@@ -731,28 +792,41 @@ const waLink = name => `https://wa.me/${WA}?text=` + encodeURIComponent(`Halo Pa
 
 /* ===== RENDER PRICELIST ===== */
 const plBody = document.getElementById('plBody');
+const plCards = document.getElementById('plCards');
 const plCount = document.getElementById('plCount');
 let curF = 'all', curQ = '';
 
 function renderPL(){
-  let html = '', count = 0;
+  let html = '', cardHtml = '', count = 0;
   PRODUK.forEach(grp => {
     if(curF !== 'all' && grp.fam !== curF) return;
     const items = grp.items.filter(it =>
       (grp.g + ' ' + it.n + ' ' + it.s).toLowerCase().includes(curQ));
     if(!items.length) return;
     html += `<tr class="group-row" id="grp-${grp.fam}"><td colspan="4">${grp.g}<small>${grp.note}</small></td></tr>`;
+    cardHtml += `<div class="plc-group">${grp.g}<small>${grp.note}</small></div>`;
     items.forEach(it => {
       count++;
+      const noteTxt = it.otr ? 'OTR referensi*' : 'Off The Road*';
       html += `<tr>
         <td><div class="tname">${it.n}</div></td>
         <td><span class="tspec">${it.s}</span></td>
-        <td><span class="tprice">${fmtShort(it.p)}</span><span class="tnote">${it.otr ? 'OTR referensi*' : 'Off The Road*'}</span></td>
+        <td><span class="tprice">${fmtShort(it.p)}</span><span class="tnote">${noteTxt}</span></td>
         <td style="text-align:right"><a class="twa" href="${waLink(it.n)}" target="_blank" rel="noopener">WA →</a></td>
       </tr>`;
+      cardHtml += `<div class="plc">
+        <div class="plc-top">
+          <div class="plc-name">${it.n}</div>
+          <div><div class="plc-price">${fmtShort(it.p)}</div><span class="plc-note">${noteTxt}</span></div>
+        </div>
+        <div class="plc-spec">${it.s}</div>
+        <a class="plc-wa" href="${waLink(it.n)}" target="_blank" rel="noopener">💬 Tanya Harga via WA</a>
+      </div>`;
     });
   });
-  plBody.innerHTML = html || '<tr><td colspan="4" style="text-align:center;padding:2rem;color:#8a909b">Tidak ada tipe yang cocok — coba kata kunci lain, atau <a href="' + waLink('unit Isuzu') + '" style="color:var(--isuzu-red)" target="_blank">tanya langsung via WA</a>.</td></tr>';
+  const empty = '<div style="text-align:center;padding:2rem;color:#8a909b">Tidak ada tipe yang cocok — coba kata kunci lain, atau <a href="' + waLink('unit Isuzu') + '" style="color:var(--isuzu-red)" target="_blank">tanya langsung via WA</a>.</div>';
+  plBody.innerHTML = html || '<tr><td colspan="4">' + empty + '</td></tr>';
+  plCards.innerHTML = cardHtml || empty;
   plCount.textContent = count + ' tipe ditampilkan';
 }
 document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
@@ -809,6 +883,20 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
 }), {threshold:.1});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ===== HAMBURGER MENU ===== */
+const burger = document.getElementById('burger');
+const mmenu = document.getElementById('mmenu');
+burger.addEventListener('click', () => {
+  const open = mmenu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.textContent = open ? '✕' : '☰';
+});
+mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mmenu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.textContent = '☰';
+}));
 </script>
 </body>
 </html>
